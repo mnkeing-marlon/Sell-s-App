@@ -16,8 +16,8 @@ st.markdown('<div class="services-title">🎯 Nos Services Premium</div>', unsaf
 
 st.markdown("""
 <div class="buttons-container">
-    <button class="decorative-button-primary">VENDRE MA MAISON<br><small>Estimation précise et vente rapide</small></button>
-    <button class="decorative-button-secondary">ACHETER UNE MAISON<br><small>Votre futur chez-vous vous attend</small></button>
+    <button class="decorative-button-primary">VENDRE MA MAISON<br><small>Estimation précise et rapide</small></button>
+    <button class="decorative-button-secondary">ACHETER UNE MAISON<br><small>Consulter notre boutique</small></button>
 </div>
 """, unsafe_allow_html=True)
 
@@ -63,5 +63,6 @@ for idx, col in enumerate(cols):
     with col:
         if idx < len(loaded_images):
             st.image(loaded_images[idx], caption=f"{price[idx][0]} : {price[idx][1]}", width="stretch")
+
 
 st.markdown('</div>', unsafe_allow_html=True)
