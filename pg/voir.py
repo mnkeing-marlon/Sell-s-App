@@ -64,4 +64,6 @@ for i in range(0, len(loaded_images), 3):
             with cols[j]:
                 st.image(loaded_images[idx], caption=f"{price[idx][0]} : {price[idx][1]}", use_container_width=True)
 
+
 st.markdown('</div>', unsafe_allow_html=True)
+st.info("💡 **Utilisez la sidebar sur la gauche pour naviguer vers nos services**")
