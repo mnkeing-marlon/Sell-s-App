@@ -196,7 +196,7 @@ if predict_button:
     infos=[periode,sqft_lot,floors,view,condition,grade_combo,sqft_basement,age_u,renovation_cat
            ,zipcode,piece]
     df_initial = pd.DataFrame([infos], columns=columns)
-    st.write(df_initial)
+    #st.write(df_initial)
 
     grade_combo = np.log1p(grade_combo)
     #standard = [[age_u,grade_combo]]
@@ -214,7 +214,7 @@ if predict_button:
            ,zipcode,piece]
     df_model = pd.DataFrame([infosf], columns=columns)
     df_model[['age', 'grade_combo']]=scaler_garde.transform(df_model[['age', 'grade_combo']])
-    st.write(df_model)
+    #st.write(df_model)
 
 
     st.success("Formulaire soumis avec succès !")
@@ -261,6 +261,7 @@ if predict_button:
         <p style='margin: 0; opacity: 0.9; text-align: center; font-size: 1.2em;'>Prix prédit pour votre propriété</p>
     </div>
     """, unsafe_allow_html=True)
+
 
 
 
