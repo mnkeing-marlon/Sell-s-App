@@ -261,8 +261,10 @@ if predict_button:
         <p style='margin: 0; opacity: 0.9; text-align: center; font-size: 1.2em;'>Prix prédit pour votre propriété</p>
     </div>
     """, unsafe_allow_html=True)
+    st.info("💡 **Utilisez la sidebar sur la gauche pour naviguer vers nos services**")
 
 
 
 
     
+
