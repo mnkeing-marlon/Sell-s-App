@@ -155,13 +155,13 @@ st.markdown("""
 
 # --- SIDEBAR POUR LA NAVIGATION ---
 with st.sidebar:
-    st.title("🏠 Navigation")
+    st.title("Navigation")
     st.markdown("---")
-    if st.button("📊 Accueil", width='stretch'):
+    if st.button("Accueil", width='stretch'):
         st.switch_page("pg/acc.py")
-    if st.button("🎯 Vendre ma maison", width='stretch'):
+    if st.button("Vendre ma maison", width='stretch'):
         st.switch_page("pg/vendre.py")
-    if st.button("📊 Boutique", width='stretch'):
+    if st.button("Boutique", width='stretch'):
         st.switch_page("pg/voir.py")
 
     st.markdown("---")
@@ -181,4 +181,5 @@ st.markdown('<h1 class="main-title">🏠 House Switch</h1>', unsafe_allow_html=T
 
 
 # --- pg.run() DOIT ÊTRE À LA FIN ET UNE SEULE FOIS ---
+
 pg.run()
