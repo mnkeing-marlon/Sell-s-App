@@ -181,7 +181,7 @@ with st.form("prediction_form"):
     col_btn1, col_btn2, col_btn3 = st.columns([1, 2, 1])
     with col_btn2:
         predict_button = st.form_submit_button(
-            "🔮 Prédire le prix", 
+            " Prédire le prix", 
             use_container_width=True, 
             type="primary", 
             key="main_prediction_button"
@@ -232,7 +232,7 @@ if predict_button:
         st.write(f"**Rénovation:**    {renovation_cat_affichage}")
 
     # Animation de chargement
-    with st.spinner('🔮 Calcul de la prédiction en cours...'):
+    with st.spinner('Calcul de la prédiction en cours...'):
         import time
         time.sleep(3)  # Simulation du temps de calcul
         
@@ -267,4 +267,5 @@ if predict_button:
 
 
     
+
 
