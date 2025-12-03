@@ -154,20 +154,115 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- SIDEBAR POUR LA NAVIGATION ---
+# --- SIDEBAR POUR LA NAVIGATION ---
 with st.sidebar:
-    st.title("Navigation")
-    st.markdown("---")
-    if st.button("Accueil", width='stretch'):
-        st.switch_page("pg/acc.py")
-    if st.button("Vendre ma maison", width='stretch'):
-        st.switch_page("pg/vendre.py")
-    if st.button("Boutique", width='stretch'):
-        st.switch_page("pg/voir.py")
-
-    st.markdown("---")
-    st.markdown("**Contactez-nous**")
-    st.markdown("📞 (+237) 6 97 54 54 88")
-    st.markdown("📧 mnkeing@gmail.com")
+    # En-tête avec style
+    st.markdown(
+        """
+        <div style="padding: 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                    border-radius: 10px; margin-bottom: 2rem; text-align: center;">
+            <h2 style="color: white; margin: 0; font-size: 1.5rem; font-weight: 600;">Navigation</h2>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    # Séparateur stylisé
+    st.markdown("<hr style='border: none; height: 2px; background: linear-gradient(to right, transparent, #667eea, transparent); margin: 1.5rem 0;'>", 
+                unsafe_allow_html=True)
+    
+    # Style CSS pour les boutons
+    st.markdown("""
+        <style>
+        .nav-button {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .nav-button:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+        .nav-button:active {
+            transform: translateY(0);
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    # Conteneur pour les boutons
+    with st.container():
+        # Bouton Accueil
+        if st.button("Accueil", key="accueil_btn", 
+                     use_container_width=True,
+                     type="secondary"):
+            st.switch_page("pg/acc.py")
+        
+        # Bouton Vendre ma maison
+        if st.button("Vendre ma maison", key="vendre_btn",
+                     use_container_width=True,
+                     type="secondary"):
+            st.switch_page("pg/vendre.py")
+        
+        # Bouton Boutique
+        if st.button("Boutique", key="boutique_btn",
+                     use_container_width=True,
+                     type="secondary"):
+            st.switch_page("pg/voir.py")
+    
+    # Séparateur stylisé
+    st.markdown("<hr style='border: none; height: 2px; background: linear-gradient(to right, transparent, #667eea, transparent); margin: 1.5rem 0;'>", 
+                unsafe_allow_html=True)
+    
+    # Section contact avec style
+    st.markdown(
+        """
+        <div style="padding: 1.25rem; background: #f8f9fa; border-radius: 10px; 
+                    border-left: 4px solid #667eea; margin-top: 1rem;">
+            <h3 style="color: #2d3748; margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem;">
+                Contactez-nous
+            </h3>
+            <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                <div style="width: 30px; height: 30px; background: #667eea; border-radius: 50%; 
+                            display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                    <span style="color: white; font-size: 0.9rem;">T</span>
+                </div>
+                <span style="color: #4a5568; font-size: 0.95rem;">(+237) 6 97 54 54 88</span>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div style="width: 30px; height: 30px; background: #764ba2; border-radius: 50%; 
+                            display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                    <span style="color: white; font-size: 0.9rem;">@</span>
+                </div>
+                <span style="color: #4a5568; font-size: 0.95rem;">mnkeing@gmail.com</span>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    # Pied de page discret
+    st.markdown(
+        """
+        <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; 
+                    border-top: 1px solid #e0e0e0; color: #a0aec0; font-size: 0.8rem;">
+            © 2024 Tous droits réservés
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 
 
@@ -183,3 +278,4 @@ st.markdown('<h1 class="main-title">🏠 House Switch</h1>', unsafe_allow_html=T
 # --- pg.run() DOIT ÊTRE À LA FIN ET UNE SEULE FOIS ---
 
 pg.run()
+
